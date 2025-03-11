@@ -16,21 +16,70 @@ body {
     padding: 15px;
     border-right: 2px solid #ddd;
     overflow-y: auto;
+    position: relative;
 }
 
 .sidebar input, .sidebar select {
-    width: 100%;
+    width: 95%;
+    margin-top: 10px;
     margin-bottom: 10px;
     padding: 8px;
     font-size: 16px;
+}
+
+#searchResults {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 90%;
+    max-height: 150px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0px;
+    margin-top: -5px;
+    z-index: 10;
+}
+
+.search-result-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background: #ddd;
+}
+
+.collapsible {
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+}
+
+#fileTree ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+#fileTree li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#fileTree li:hover {
+    background: #ddd;
 }
 
 .content {
     flex-grow: 1;
     padding: 20px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 iframe {
+    width: 90%;
+    height: 90%;
     border: none;
 }
