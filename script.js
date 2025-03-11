@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "2024": {
             "Business": ["Marketing", "Finance"],
             "Engineering": ["Mechanical", "Electrical"]
+            "Marketing": ["Finance", "Marketing", "TEMA 1010.pdf", "TEMA 1010"]
         },
         "2025": {
             "Science": ["Biology", "Chemistry"]
