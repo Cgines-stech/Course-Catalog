@@ -11,10 +11,14 @@
             "id": "2528a0f216e20e66",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Catalog 24-25/Software Development/TESD 1010.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TESD 1010"
             }
           }
         ]
@@ -109,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Catalog 24-25/Software Development/TESD 1010.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from TESD 1010"
             }
           },
           {
@@ -174,8 +179,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5cb719ba4e779f90",
+  "active": "2528a0f216e20e66",
   "lastOpenFiles": [
+    "Catalog 24-25/Software Development/TESD 1010.md",
+    "Catalog 24-25/Software Development/TESD.md",
+    "Catalog 24-25/Software Development/TESD 1010",
+    "Catalog 24-25/Information Technology",
+    "Catalog 24-25/Software Development",
+    "Catalog 24-25",
     "Welcome.md"
   ]
 }
