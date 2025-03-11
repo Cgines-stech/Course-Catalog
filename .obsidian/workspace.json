@@ -11,14 +11,10 @@
             "id": "2528a0f216e20e66",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CatalogSearch.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "CatalogSearch"
+              "title": "New tab"
             }
           }
         ]
@@ -113,12 +109,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CatalogSearch.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from CatalogSearch"
+              "title": "Outgoing links"
             }
           },
           {
@@ -179,7 +174,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2528a0f216e20e66",
+  "active": "02d7e1b7b670537f",
   "lastOpenFiles": [
     "styles.css",
     "script.js",
