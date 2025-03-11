@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Catalog/Marketing/Marketing.md",
+                "file": "CatalogSearch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Marketing"
+              "title": "CatalogSearch"
             }
           }
         ]
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Catalog/Marketing/Marketing.md",
+                "file": "CatalogSearch.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Marketing"
+              "title": "Outgoing links from CatalogSearch"
             }
           },
           {
@@ -181,9 +181,10 @@
   },
   "active": "2528a0f216e20e66",
   "lastOpenFiles": [
+    "index.html",
+    "Catalog/Marketing/Marketing.md",
     "Catalog/Marketing/Finance.md",
     "CatalogSearch.md",
-    "Catalog/Marketing/Marketing.md",
     "Catalog/Engineering/Electrical.md",
     "Catalog/Engineering/Mechanical.md",
     "Catalog/Engineering",
