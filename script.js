@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const fileTree = document.getElementById("fileTree");
 
     const catalogData = {
-        "2024": {
+        "2024-25": {
             "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
             "Automation Technology": ["TEAM 1010"],
             "Automotive Technician": [],
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "Surgical Technology": [],
             "Welding Essentials": []
         },
-        "2025": {
+        "2025-26": {
             "Unavailable": []
         }
     };
@@ -103,9 +103,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Index PDFs and Store in LocalStorage
     async function indexPDFs() {
         let pdfList = [
-            "pdfs/2024/Advanced Emergency Medical Technician/TEEM 1201.pdf",
-            "pdfs/2024/Advanced Emergency Medical Technician/TEEM 1900.pdf",
-            "pdfs/2024/Automation Technology/TEAM 1010.pdf"
+            "pdfs/2024-25/Advanced Emergency Medical Technician/TEEM 1201.pdf",
+            "pdfs/2024-25/Advanced Emergency Medical Technician/TEEM 1900.pdf",
+            "pdfs/2024-25/Automation Technology/TEAM 1010.pdf"
         ];
 
         let index = {};
