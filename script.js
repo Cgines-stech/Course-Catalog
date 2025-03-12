@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     const searchBar = document.getElementById("searchBar");
     const searchResults = document.getElementById("searchResults");
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const catalogData = {
         "2024": {
             "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
-            "Automation Technology": [""],
+            "Automation Technology": ["TEAM 1010"],
             "Automotive Technician": [""],
             "Commercial Driver's License Class A": [""],
             "Culinary Arts": [""],
