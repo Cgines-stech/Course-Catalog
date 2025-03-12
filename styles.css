@@ -12,7 +12,7 @@ body {
 }
 
 .sidebar {
-    width: 350px;
+    width: 400px;
     background: #f4f4f4;
     padding: 15px;
     border-right: 2px solid #ddd;
@@ -22,9 +22,9 @@ body {
 
 .sidebar input, .sidebar select {
     width: 95%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
     font-size: 16px;
 }
 
@@ -54,6 +54,11 @@ body {
     cursor: pointer;
     font-weight: bold;
     display: block;
+    padding: 5px;
+}
+
+.collapsible:hover {
+    color: #007BFF;
 }
 
 #fileTree ul {
@@ -88,4 +93,13 @@ iframe {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.pdf-link {
+    cursor: pointer;
+    color: #007BFF;
+}
+
+.pdf-link:hover {
+    text-decoration: underline;
 }

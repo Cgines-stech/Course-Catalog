@@ -148,44 +148,56 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Build File Tree
     function buildFileTree(data, parentElement) {
         Object.keys(data).forEach(year => {
             let yearNode = document.createElement("div");
-            yearNode.innerHTML = `<span class="collapsible">${year}</span>`;
+            yearNode.innerHTML = `<span class="collapsible">📁 ${year}</span>`;
             let yearList = document.createElement("ul");
             yearList.style.display = "none";
-
+    
             Object.keys(data[year]).forEach(program => {
                 let programNode = document.createElement("li");
-                programNode.innerHTML = `<span class="collapsible">${program}</span>`;
+                programNode.innerHTML = `<span class="collapsible">📁 ${program}</span>`;
                 let programList = document.createElement("ul");
                 programList.style.display = "none";
-
+    
                 if (Array.isArray(data[year][program])) {
                     data[year][program].forEach(course => {
-                        let courseNode = document.createElement("li");
-                        courseNode.textContent = course;
-                        courseNode.addEventListener("click", () => {
-                            let pdfPath = `pdfs/${year}/${program}/${encodeURIComponent(course)}.pdf`;
-                            pdfViewer.src = pdfPath;
-                        });
-                        programList.appendChild(courseNode);
+                        if (course) { // Only add non-empty course names
+                            let courseNode = document.createElement("li");
+                            courseNode.innerHTML = `📄 <span class="pdf-link">${course}</span>`;
+                            courseNode.addEventListener("click", () => {
+                                let pdfPath = `pdfs/${year}/${program}/${encodeURIComponent(course)}.pdf`;
+                                pdfViewer.src = pdfPath;
+                            });
+                            programList.appendChild(courseNode);
+                        }
                     });
                 }
-                programNode.appendChild(programList);
-                yearList.appendChild(programNode);
-                programNode.querySelector(".collapsible").addEventListener("click", function() {
+    
+                // Toggle Program List
+                programNode.querySelector(".collapsible").addEventListener("click", function () {
+                    let icon = this.innerHTML.startsWith("📁") ? "📂" : "📁";
+                    this.innerHTML = `${icon} ${program}`;
                     programList.style.display = programList.style.display === "none" ? "block" : "none";
                 });
+    
+                programNode.appendChild(programList);
+                yearList.appendChild(programNode);
             });
-
-            yearNode.appendChild(yearList);
-            parentElement.appendChild(yearNode);
-            yearNode.querySelector(".collapsible").addEventListener("click", function() {
+    
+            // Toggle Year List
+            yearNode.querySelector(".collapsible").addEventListener("click", function () {
+                let icon = this.innerHTML.startsWith("📁") ? "📂" : "📁";
+                this.innerHTML = `${icon} ${year}`;
                 yearList.style.display = yearList.style.display === "none" ? "block" : "none";
             });
+    
+            yearNode.appendChild(yearList);
+            parentElement.appendChild(yearNode);
         });
     }
+    
+
     buildFileTree(catalogData, fileTree);
 });
