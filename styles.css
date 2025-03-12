@@ -12,7 +12,7 @@ body {
 }
 
 .sidebar {
-    width: 300px;
+    width: 350px;
     background: #f4f4f4;
     padding: 15px;
     border-right: 2px solid #ddd;
@@ -83,4 +83,9 @@ iframe {
     width: 90%;
     height: 90%;
     border: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }

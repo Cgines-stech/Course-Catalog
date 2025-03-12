@@ -104,7 +104,8 @@ document.addEventListener("DOMContentLoaded", function() {
     async function indexPDFs() {
         let pdfList = [
             "pdfs/2024/Advanced Emergency Medical Technician/TEEM 1201.pdf",
-            "pdfs/2024/Advanced Emergency Medical Technician/TEEM 1900.pdf"
+            "pdfs/2024/Advanced Emergency Medical Technician/TEEM 1900.pdf",
+            "pdfs/2024/Automation Technology/TEAM 1010.pdf"
         ];
 
         let index = {};
