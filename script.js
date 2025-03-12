@@ -12,31 +12,32 @@ document.addEventListener("DOMContentLoaded", function() {
         "2024": {
             "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
             "Automation Technology": ["TEAM 1010"],
-            "Automotive Technician": [""],
-            "Commercial Driver's License Class A": [""],
-            "Culinary Arts": [""],
-            "Electrical Apprenticeship": [""],
-            "Emergencry Medical Technician": [""],
-            "Firefighter": [""],
-            "Information Technology": [""],
-            "Medical Assistant": ["TEMA 1010", "TEMA 2020"],
-            "Medical Office Receptionist": [""],
-            "Nursing Assistant": [""],
-            "Paramedic": [""],
-            "Pharmacy Technician": [""],
-            "Phlebotomy": [""],
-            "Plumbing Apprenticeship": [""],
-            "Practical Nursing": [""],
-            "Production Welder": [""],
-            "Software Development": [""],
-            "Surgical Technology": [""],
-            "Welding Essentials": [""]
+            "Automotive Technician": [],
+            "Commercial Driver's License Class A": [],
+            "Culinary Arts": [],
+            "Electrical Apprenticeship": [],
+            "Emergency Medical Technician": [],
+            "Firefighter": [],
+            "Information Technology": [],
+            "Medical Assistant": [],
+            "Medical Office Receptionist": [],
+            "Nursing Assistant": [],
+            "Paramedic": [],
+            "Pharmacy Technician": [],
+            "Phlebotomy": [],
+            "Plumbing Apprenticeship": [],
+            "Practical Nursing": [],
+            "Production Welder": [],
+            "Software Development": [],
+            "Surgical Technology": [],
+            "Welding Essentials": []
         },
         "2025": {
-            "Unavailable": [""]
+            "Unavailable": []
         }
     };
 
+    // Populate Year Dropdown
     Object.keys(catalogData).forEach(year => {
         let option = document.createElement("option");
         option.value = year;
@@ -44,11 +45,12 @@ document.addEventListener("DOMContentLoaded", function() {
         yearFilter.appendChild(option);
     });
 
+    // Populate Programs Based on Selected Year
     yearFilter.addEventListener("change", function() {
         programFilter.innerHTML = '<option value="">Select Program</option>';
         courseFilter.innerHTML = '<option value="">Select Course</option>';
         let selectedYear = yearFilter.value;
-        if (selectedYear && catalogData[selectedYear]) {
+        if (catalogData[selectedYear]) {
             Object.keys(catalogData[selectedYear]).forEach(program => {
                 let option = document.createElement("option");
                 option.value = program;
@@ -58,11 +60,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Populate Courses Based on Selected Program
     programFilter.addEventListener("change", function() {
         courseFilter.innerHTML = '<option value="">Select Course</option>';
         let selectedYear = yearFilter.value;
         let selectedProgram = programFilter.value;
-        if (selectedYear && selectedProgram && Array.isArray(catalogData[selectedYear][selectedProgram])) {
+        if (catalogData[selectedYear] && catalogData[selectedYear][selectedProgram]) {
             catalogData[selectedYear][selectedProgram].forEach(course => {
                 let option = document.createElement("option");
                 option.value = course;
@@ -72,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Load PDF Based on Selection
     courseFilter.addEventListener("change", function() {
         let selectedYear = yearFilter.value;
         let selectedProgram = programFilter.value;
@@ -82,55 +86,81 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Extract Text from PDFs Using PDF.js
+    async function extractTextFromPDF(pdfUrl) {
+        let pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+        let text = "";
+
+        for (let i = 1; i <= pdf.numPages; i++) {
+            let page = await pdf.getPage(i);
+            let content = await page.getTextContent();
+            text += content.items.map(item => item.str).join(" ") + " ";
+        }
+
+        return text.toLowerCase();
+    }
+
+    // Index PDFs and Store in LocalStorage
+    async function indexPDFs() {
+        let pdfList = [
+            "pdfs/2024/Advanced Emergency Medical Technician/TEEM 1201.pdf",
+            "pdfs/2024/Advanced Emergency Medical Technician/TEEM 1900.pdf"
+        ];
+
+        let index = {};
+
+        for (let pdf of pdfList) {
+            index[pdf] = await extractTextFromPDF(pdf);
+        }
+
+        localStorage.setItem("pdfIndex", JSON.stringify(index));
+        console.log("PDFs Indexed:", index);
+    }
+
+    // Run Indexing on First Load
+    indexPDFs(); // Always update the index
+
+    // Search PDF Contents
     searchBar.addEventListener("input", function() {
-        let query = searchBar.value.toLowerCase();
+        let query = searchBar.value.toLowerCase().trim();
         searchResults.innerHTML = "";
-        if (query.length < 1) return;
-        Object.keys(catalogData).forEach(year => {
-            Object.keys(catalogData[year]).forEach(program => {
-                if (Array.isArray(catalogData[year][program])) {
-                    catalogData[year][program].forEach(course => {
-                        if (course.toLowerCase().includes(query)) {
-                            let listItem = document.createElement("li");
-                            listItem.textContent = `${year} > ${program} > ${course}`;
-                            listItem.classList.add("search-result-item");
-                            listItem.addEventListener("click", function() {
-                                let pdfPath = `pdfs/${year}/${program}/${encodeURIComponent(course)}.pdf`;
-                                pdfViewer.src = pdfPath;
-                                searchBar.value = `${year} > ${program} > ${course}`;
-                                searchResults.innerHTML = "";
-                            });
-                            searchResults.appendChild(listItem);
-                        }
-                    });
-                }
+
+        if (query.length < 3) return;
+
+        let pdfIndex = JSON.parse(localStorage.getItem("pdfIndex"));
+        if (!pdfIndex) return;
+
+        let results = Object.keys(pdfIndex).filter(pdf => pdfIndex[pdf].includes(query));
+
+        if (results.length === 0) {
+            searchResults.innerHTML = "<li>No matching PDFs found</li>";
+            return;
+        }
+
+        results.forEach(pdf => {
+            let item = document.createElement("li");
+            item.textContent = pdf.split("/").pop();
+            item.addEventListener("click", () => {
+                pdfViewer.src = pdf;
             });
+            searchResults.appendChild(item);
         });
-        if (searchResults.children.length === 0) {
-            let noResults = document.createElement("li");
-            noResults.textContent = "No matching results";
-            noResults.classList.add("search-result-item");
-            searchResults.appendChild(noResults);
-        }
     });
 
-    document.addEventListener("click", function(event) {
-        if (!searchBar.contains(event.target) && !searchResults.contains(event.target)) {
-            searchResults.innerHTML = "";
-        }
-    });
-
+    // Build File Tree
     function buildFileTree(data, parentElement) {
         Object.keys(data).forEach(year => {
             let yearNode = document.createElement("div");
             yearNode.innerHTML = `<span class="collapsible">${year}</span>`;
             let yearList = document.createElement("ul");
             yearList.style.display = "none";
+
             Object.keys(data[year]).forEach(program => {
                 let programNode = document.createElement("li");
                 programNode.innerHTML = `<span class="collapsible">${program}</span>`;
                 let programList = document.createElement("ul");
                 programList.style.display = "none";
+
                 if (Array.isArray(data[year][program])) {
                     data[year][program].forEach(course => {
                         let courseNode = document.createElement("li");
@@ -148,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     programList.style.display = programList.style.display === "none" ? "block" : "none";
                 });
             });
+
             yearNode.appendChild(yearList);
             parentElement.appendChild(yearNode);
             yearNode.querySelector(".collapsible").addEventListener("click", function() {
