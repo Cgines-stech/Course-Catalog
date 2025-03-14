@@ -4,33 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const programFilter = document.getElementById("programFilter");
     const courseFilter = document.getElementById("courseFilter");
     const pdfViewer = document.getElementById("pdfViewer");
-
+    const fileTree = document.getElementById("fileTree");
 
     const catalogData = {
         "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
         "Automation Technology": ["TEAM 1010"],
         "Automotive Technician": ["SWAM 1103", "SWAM 1521"],
-        "Commercial Driver's License Class A": ["TECD 1100"],
-        "Culinary Arts": [],
-        "Electrical Apprenticeship": [],
-        "Emergency Medical Technician": [],
-        "Firefighter": [],
-        "Information Technology": [],
-        "Medical Assistant": [],
-        "Medical Office Receptionist": [],
-        "Nursing Assistant": [],
-        "Paramedic": [],
-        "Pharmacy Technician": [],
-        "Phlebotomy": [],
-        "Plumbing Apprenticeship": [],
-        "Practical Nursing": [],
-        "Production Welder": [],
-        "Software Development": [],
-        "Surgical Technology": [],
-        "Welding Essentials": []
+        "Commercial Driver's License Class A": ["TECD 1100"]
     };
 
-    // Populate Programs
+    // Populate Program Dropdown
     Object.keys(catalogData).forEach(program => {
         let option = document.createElement("option");
         option.value = program;
@@ -62,6 +45,42 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Extract Text from PDFs Using PDF.js
+    async function extractTextFromPDF(pdfUrl) {
+        let pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+        let text = "";
+
+        for (let i = 1; i <= pdf.numPages; i++) {
+            let page = await pdf.getPage(i);
+            let content = await page.getTextContent();
+            text += content.items.map(item => item.str).join(" ") + " ";
+        }
+
+        return text.toLowerCase();
+    }
+
+    // Index PDFs and Store in LocalStorage
+    async function indexPDFs() {
+        let pdfList = [
+            "pdfs/Advanced Emergency Medical Technician/TEEM 1201.pdf",
+            "pdfs/Advanced Emergency Medical Technician/TEEM 1900.pdf",
+            "pdfs/Automation Technology/TEAM 1010.pdf",
+            "pdfs/Automotive Technician/SWAM 1103.pdf",
+            "pdfs/Automotive Technician/SWAM 1521.pdf",
+            "pdfs/Commercial Driver's License Class A/TECD 1100.pdf"
+        ];
+
+        let index = {};
+
+        for (let pdf of pdfList) {
+            index[pdf] = await extractTextFromPDF(pdf);
+        }
+
+        localStorage.setItem("pdfIndex", JSON.stringify(index));
+    }
+
+    indexPDFs(); 
+
     // Search PDFs
     searchBar.addEventListener("input", function() {
         let query = searchBar.value.toLowerCase().trim();
@@ -69,29 +88,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (query.length < 3) return;
 
-        let results = [];
-        Object.keys(catalogData).forEach(program => {
-            catalogData[program].forEach(course => {
-                if (course.toLowerCase().includes(query) || program.toLowerCase().includes(query)) {
-                    results.push({ program, course });
-                }
-            });
-        });
+        let pdfIndex = JSON.parse(localStorage.getItem("pdfIndex"));
+        if (!pdfIndex) return;
+
+        let results = Object.keys(pdfIndex).filter(pdf => pdfIndex[pdf].includes(query));
 
         if (results.length === 0) {
-            searchResults.innerHTML = "<li>No matching courses found</li>";
+            searchResults.innerHTML = "<li>No matching PDFs found</li>";
             return;
         }
 
-        results.forEach(({ program, course }) => {
+        results.forEach(pdf => {
             let item = document.createElement("li");
-            item.textContent = `${program} - ${course}`;
+            item.textContent = pdf.split("/").pop();
             item.addEventListener("click", () => {
-                pdfViewer.src = `pdfs/${program}/${encodeURIComponent(course)}.pdf`;
+                pdfViewer.src = pdf;
             });
             searchResults.appendChild(item);
         });
     });
-
-    buildFileTree(catalogData);
 });
