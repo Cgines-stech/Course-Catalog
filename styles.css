@@ -1,87 +1,58 @@
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: column;
     height: 100vh;
 }
 
-.container {
+.navbar {
     display: flex;
-    width: 100%;
+    align-items: center;
+    background: #333;
+    padding: 10px;
+    color: white;
+    gap: 10px; /* Add spacing instead of using margins on individual elements */
 }
 
-.sidebar {
-    width: 400px;
-    background: #f4f4f4;
-    padding: 15px;
-    border-right: 2px solid #ddd;
-    overflow-y: auto;
-    position: relative;
-}
-
-.sidebar input, .sidebar select {
-    width: 95%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
+.navbar select, .navbar input {
+    margin: 0; /* Remove unwanted margins */
+    padding: 8px;
     font-size: 16px;
 }
 
 #searchResults {
+    list-style: none;
+    padding: 10px;
     position: absolute;
     background: white;
     border: 1px solid #ccc;
-    width: 90%;
-    max-height: 150px;
+    width: 250px;
+    max-height: 200px;
     overflow-y: auto;
-    list-style: none;
-    padding: 0px;
-    margin-top: -5px;
-    z-index: 10;
+    margin-left: 10px;
+    z-index: 1000;
 }
 
-.search-result-item {
-    padding: 5px;
+#searchResults li {
+    background: #f4f4f4;
+    padding: 8px;
+    margin: 5px 0;
     cursor: pointer;
 }
 
-.search-result-item:hover {
-    background: #ddd;
-}
-
-.collapsible {
-    cursor: pointer;
-    font-weight: bold;
-    display: block;
-    padding: 5px;
-}
-
-.collapsible:hover {
-    color: #007BFF;
-}
-
-#fileTree ul {
-    list-style-type: none;
-    padding-left: 15px;
-}
-
-#fileTree li {
-    cursor: pointer;
-    padding: 5px;
-}
-
-#fileTree li:hover {
+#searchResults li:hover {
     background: #ddd;
 }
 
 .content {
-    flex-grow: 1;
-    padding: 20px;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: calc(100vh - 60px);
+    padding: 10px;
 }
 
 iframe {
@@ -90,16 +61,3 @@ iframe {
     border: none;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.pdf-link {
-    cursor: pointer;
-    color: #007BFF;
-}
-
-.pdf-link:hover {
-    text-decoration: underline;
-}
