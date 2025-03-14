@@ -2,48 +2,71 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchBar = document.getElementById("searchBar");
     const searchResults = document.getElementById("searchResults");
+    const yearFilter = document.getElementById("yearFilter");
     const programFilter = document.getElementById("programFilter");
     const courseFilter = document.getElementById("courseFilter");
     const pdfViewer = document.getElementById("pdfViewer");
+    const fileTree = document.getElementById("fileTree");
 
     const catalogData = {
-        "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
-        "Automation Technology": ["TEAM 1010"],
-        "Automotive Technician": ["SWAM 1103", "SWAM 1521"],
-        "Commercial Driver's License Class A": ["TECD 1100"],
-        "Culinary Arts": [],
-        "Electrical Apprenticeship": [],
-        "Emergency Medical Technician": [],
-        "Firefighter": [],
-        "Information Technology": [],
-        "Medical Assistant": [],
-        "Medical Office Receptionist": [],
-        "Nursing Assistant": [],
-        "Paramedic": [],
-        "Pharmacy Technician": [],
-        "Phlebotomy": [],
-        "Plumbing Apprenticeship": [],
-        "Practical Nursing": [],
-        "Production Welder": [],
-        "Software Development": [],
-        "Surgical Technology": [],
-        "Welding Essentials": []
+        "2024-25": {
+            "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
+            "Automation Technology": ["TEAM 1010"],
+            "Automotive Technician": ["SWAM 1103", "SWAM 1521"],
+            "Commercial Driver's License Class A": ["TECD 1100"],
+            "Culinary Arts": [],
+            "Electrical Apprenticeship": [],
+            "Emergency Medical Technician": [],
+            "Firefighter": [],
+            "Information Technology": [],
+            "Medical Assistant": [],
+            "Medical Office Receptionist": [],
+            "Nursing Assistant": [],
+            "Paramedic": [],
+            "Pharmacy Technician": [],
+            "Phlebotomy": [],
+            "Plumbing Apprenticeship": [],
+            "Practical Nursing": [],
+            "Production Welder": [],
+            "Software Development": [],
+            "Surgical Technology": [],
+            "Welding Essentials": []
+        },
+        "2025-26": {
+            "Unavailable": []
+        }
     };
 
-    // Populate Program Dropdown
-    Object.keys(catalogData).forEach(program => {
+    // Populate Year Dropdown
+    Object.keys(catalogData).forEach(year => {
         let option = document.createElement("option");
-        option.value = program;
-        option.textContent = program;
-        programFilter.appendChild(option);
+        option.value = year;
+        option.textContent = year;
+        yearFilter.appendChild(option);
+    });
+
+    // Populate Programs Based on Selected Year
+    yearFilter.addEventListener("change", function() {
+        programFilter.innerHTML = '<option value="">Select Program</option>';
+        courseFilter.innerHTML = '<option value="">Select Course</option>';
+        let selectedYear = yearFilter.value;
+        if (catalogData[selectedYear]) {
+            Object.keys(catalogData[selectedYear]).forEach(program => {
+                let option = document.createElement("option");
+                option.value = program;
+                option.textContent = program;
+                programFilter.appendChild(option);
+            });
+        }
     });
 
     // Populate Courses Based on Selected Program
     programFilter.addEventListener("change", function() {
         courseFilter.innerHTML = '<option value="">Select Course</option>';
+        let selectedYear = yearFilter.value;
         let selectedProgram = programFilter.value;
-        if (catalogData[selectedProgram]) {
-            catalogData[selectedProgram].forEach(course => {
+        if (catalogData[selectedYear] && catalogData[selectedYear][selectedProgram]) {
+            catalogData[selectedYear][selectedProgram].forEach(course => {
                 let option = document.createElement("option");
                 option.value = course;
                 option.textContent = course;
@@ -54,10 +77,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load PDF Based on Selection
     courseFilter.addEventListener("change", function() {
+        let selectedYear = yearFilter.value;
         let selectedProgram = programFilter.value;
         let selectedCourse = courseFilter.value;
-        if (selectedProgram && selectedCourse) {
-            let pdfPath = `pdfs/${selectedProgram}/${encodeURIComponent(selectedCourse)}.pdf`;
+        if (selectedYear && selectedProgram && selectedCourse) {
+            let pdfPath = `pdfs/${selectedYear}/${selectedProgram}/${encodeURIComponent(selectedCourse)}.pdf`;
             pdfViewer.src = pdfPath;
         }
     });
@@ -79,12 +103,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Index PDFs and Store in LocalStorage
     async function indexPDFs() {
         let pdfList = [
-            "pdfs/Advanced Emergency Medical Technician/TEEM 1201.pdf",
-            "pdfs/Advanced Emergency Medical Technician/TEEM 1900.pdf",
-            "pdfs/Automation Technology/TEAM 1010.pdf",
-            "pdfs/Automotive Technician/SWAM 1103.pdf",
-            "pdfs/Automotive Technician/SWAM 1521.pdf",
-            "pdfs/Commercial Driver's License Class A/TECD 1100.pdf"
+            "pdfs/2024-25/Advanced Emergency Medical Technician/TEEM 1201.pdf",
+            "pdfs/2024-25/Advanced Emergency Medical Technician/TEEM 1900.pdf",
+
+            "pdfs/2024-25/Automation Technology/TEAM 1010.pdf",
+
+            "pdfs/2024-25/Automotive Technician/SWAM 1103.pdf",
+            "pdfs/2024-25/Automotive Technician/SWAM 1521.pdf",
+
+            "pdfs/2024-25/Commercial Driver's License Class A/TECD 1100.pdf"
         ];
 
         let index = {};
@@ -126,4 +153,56 @@ document.addEventListener("DOMContentLoaded", function() {
             searchResults.appendChild(item);
         });
     });
+
+    function buildFileTree(data, parentElement) {
+        Object.keys(data).forEach(year => {
+            let yearNode = document.createElement("div");
+            yearNode.innerHTML = `<span class="collapsible">📁 ${year}</span>`;
+            let yearList = document.createElement("ul");
+            yearList.style.display = "none";
+    
+            Object.keys(data[year]).forEach(program => {
+                let programNode = document.createElement("li");
+                programNode.innerHTML = `<span class="collapsible">📁 ${program}</span>`;
+                let programList = document.createElement("ul");
+                programList.style.display = "none";
+    
+                if (Array.isArray(data[year][program])) {
+                    data[year][program].forEach(course => {
+                        if (course) { // Only add non-empty course names
+                            let courseNode = document.createElement("li");
+                            courseNode.innerHTML = `📄 <span class="pdf-link">${course}</span>`;
+                            courseNode.addEventListener("click", () => {
+                                let pdfPath = `pdfs/${year}/${program}/${encodeURIComponent(course)}.pdf`;
+                                pdfViewer.src = pdfPath;
+                            });
+                            programList.appendChild(courseNode);
+                        }
+                    });
+                }
+    
+                // Toggle Program List
+                programNode.querySelector(".collapsible").addEventListener("click", function () {
+                    let icon = this.innerHTML.startsWith("📁") ? "📂" : "📁";
+                    this.innerHTML = `${icon} ${program}`;
+                    programList.style.display = programList.style.display === "none" ? "block" : "none";
+                });
+    
+                programNode.appendChild(programList);
+                yearList.appendChild(programNode);
+            });
+    
+            // Toggle Year List
+            yearNode.querySelector(".collapsible").addEventListener("click", function () {
+                let icon = this.innerHTML.startsWith("📁") ? "📂" : "📁";
+                this.innerHTML = `${icon} ${year}`;
+                yearList.style.display = yearList.style.display === "none" ? "block" : "none";
+            });
+    
+            yearNode.appendChild(yearList);
+            parentElement.appendChild(yearNode);
+        });
+    }
+    
+    buildFileTree(catalogData, fileTree);
 });

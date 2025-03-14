@@ -14,11 +14,10 @@ body {
     background: #333;
     padding: 10px;
     color: white;
-    gap: 10px; /* Add spacing instead of using margins on individual elements */
 }
 
 .navbar select, .navbar input {
-    margin: 0; /* Remove unwanted margins */
+    margin: 0 10px;
     padding: 8px;
     font-size: 16px;
 }
