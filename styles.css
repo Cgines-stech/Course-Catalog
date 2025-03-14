@@ -41,6 +41,7 @@ body {
     background: #f4f4f4;
     padding: 8px;
     margin: 5px 0;
+    border: solid black 1px;
     color: black;
     cursor: pointer;
 }
@@ -52,7 +53,7 @@ body {
 /* Content Layout */
 .container {
     display: flex;
-    height: calc(100vh - 200px); /* Adjust for navbar height */
+    height: calc(100vh - 60px); /* Adjust for navbar height */
 }
 
 .content {
