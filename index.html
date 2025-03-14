@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,24 +10,19 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <select id="programFilter">
+            <option value="">Select Program</option>
+        </select>
+        <select id="courseFilter">
+            <option value="">Select Course</option>
+        </select>
+        <input type="text" id="searchBar" placeholder="Search courses...">
+        <ul id="searchResults"></ul>
+    </div>
+
     <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div id="fileTree"></div> <!-- Moved above dropdowns -->
-
-            <select id="yearFilter">
-                <option value="">Select Year</option>
-            </select>
-            <select id="programFilter">
-                <option value="">Select Program</option>
-            </select>
-            <select id="courseFilter">
-                <option value="">Select Course</option></select>
-            </select>
-
-            <input type="text" id="searchBar" placeholder="Search courses...">
-            <ul id="searchResults"></ul>
-        </div>
 
         <!-- Main Content -->
         <div class="content">
