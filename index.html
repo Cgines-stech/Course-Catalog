@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <img src="logo2.jpg">
-            <div id="fileTree"></div> <!-- Moved above dropdowns -->
+            <div id="fileTree"></div>
 
             <select id="yearFilter">
                 <option value="">Select Year</option>
@@ -33,13 +32,13 @@
 
         <!-- Main Content -->
         <div class="content">
-            <div class="toolbar">
-                <button onclick="window.print()">Print</button>
-                <button onclick="triggerFind()">Find</button> <!-- New Find button -->
+            <div class="pdf-toolbar">
+                <span>Print Preview</span>
+                <input type="text" id="pdfSearchInput" placeholder="Find in PDF...">
+                <button id="pdfSearchButton">Search</button>
             </div>
             <iframe id="pdfViewer" src="" width="100%" height="100%"></iframe>
         </div>
-
     </div>
 
 </body>
