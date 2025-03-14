@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
             "Automation Technology": ["TEAM 1010"],
             "Automotive Technician": ["SWAM 1103", "SWAM 1521"],
-            "Commercial Driver's License Class A": [],
+            "Commercial Driver's License Class A": ["TECD 1100"],
             "Culinary Arts": [],
             "Electrical Apprenticeship": [],
             "Emergency Medical Technician": [],
@@ -109,7 +109,9 @@ document.addEventListener("DOMContentLoaded", function() {
             "pdfs/2024-25/Automation Technology/TEAM 1010.pdf",
 
             "pdfs/2024-25/Automotive Technician/SWAM 1103.pdf",
-            "pdfs/2024-25/Automotive Technician/SWAM 1521.pdf"
+            "pdfs/2024-25/Automotive Technician/SWAM 1521.pdf",
+
+            "pdfs/2024-25/Commercial Driver's License Class A/TECD 1100.pdf"
         ];
 
         let index = {};
