@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "2024-25": {
             "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
             "Automation Technology": ["TEAM 1010"],
-            "Automotive Technician": ["SWAM 1103"],
+            "Automotive Technician": ["SWAM 1103, SWAM 1521"],
             "Commercial Driver's License Class A": [],
             "Culinary Arts": [],
             "Electrical Apprenticeship": [],
@@ -105,10 +105,11 @@ document.addEventListener("DOMContentLoaded", function() {
         let pdfList = [
             "pdfs/2024-25/Advanced Emergency Medical Technician/TEEM 1201.pdf",
             "pdfs/2024-25/Advanced Emergency Medical Technician/TEEM 1900.pdf",
-            
+
             "pdfs/2024-25/Automation Technology/TEAM 1010.pdf",
 
-            "pdfs/2024-25/Automotive Technician/SWAM 1103.pdf"
+            "pdfs/2024-25/Automotive Technician/SWAM 1103.pdf",
+            "pdfs/2024-25/Automotive Technician/SWAM 1521.pdf"
         ];
 
         let index = {};
