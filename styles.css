@@ -9,15 +9,13 @@ body {
     height: 100vh;
 }
 
-/* Navbar at the Top */
+/* Navbar Responsiveness */
 .navbar {
     display: flex;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
     align-items: center;
-    background: grey;
-    color: white;
+    background: #007cbc;
     padding: 10px;
-    height: 60px;
-    width: 100%;
     gap: 10px;
 }
 
@@ -99,4 +97,27 @@ iframe {
     font-family: sans-serif;
     white-space: pre;
     transform-origin: 0 0;
+}
+
+/* Informational Message (Compact) */
+.info-message {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Adjust layout for tablets and smaller screens */
+@media (max-width: 768px) {
+    .info-message {
+        order: -1; /* Places the message above the other elements */
+        width: 100%; /* Makes it span the full width */
+        background-color: #444; /* Optional: Add contrast for readability */
+        border-radius: 5px;
+    }
+    .navbar select, .navbar input {
+        flex: 1; /* Expands these elements to fill space */
+    }
 }
