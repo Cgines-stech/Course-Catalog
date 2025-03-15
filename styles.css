@@ -13,7 +13,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    background: pink;
+    background: teal;
     color: white;
     padding: 10px;
     height: 60px;
@@ -74,7 +74,8 @@ iframe {
 }
 
 #pdfCanvas {
-    width: 100%;
+    height: calc(100vh - 60px); /* Subtracts 60px for the navbar */
+    max-width: 90%;
     height: auto;
     border: 1px solid #ccc;
     background-color: #fff;
