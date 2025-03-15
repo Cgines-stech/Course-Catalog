@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("pdfIndex", JSON.stringify(index));
     }
 
-    indexPDFs(); 
+    indexPDFs();
 
     // Search PDFs
     searchBar.addEventListener("input", function () {
@@ -119,6 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
             item.addEventListener("click", () => {
                 pdfViewer.src = pdf;
                 history.pushState({}, "", `?pdf=${encodeURIComponent(pdf.replace("pdfs/", ""))}`); // Update URL on selection
+                searchBar.value = ""; // Clear the search bar
+                searchResults.innerHTML = ""; // Clear the search results
             });
             searchResults.appendChild(item);
         });
