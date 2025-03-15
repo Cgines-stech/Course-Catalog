@@ -1,4 +1,8 @@
+
 /* JS */
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("searchBar");
     const searchResults = document.getElementById("searchResults");
