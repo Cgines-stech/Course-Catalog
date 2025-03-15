@@ -13,7 +13,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    background: #007cbc;
+    background: red;
     color: white;
     padding: 10px;
     height: 60px;
@@ -70,4 +70,19 @@ iframe {
     width: 90%;
     height: 100%;
     border: none;
+}
+
+#findButton {
+    padding: 8px;
+    font-size: 16px;
+    background-color: greenyellow;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+#findButton:hover {
+    background-color: green;
 }
