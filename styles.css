@@ -25,23 +25,32 @@ body {
     font-size: 16px;
 }
 
+/* Search Bar Adjustment */
+#searchBar {
+    position: relative; /* Relative positioning to align search results below it */
+}
+
 /* Search Results appear BELOW search box */
 #searchResults {
     list-style: none;
     padding: 10px;
     position: absolute;
-    width: 250px;
-    overflow-y: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
+    top: 100%; /* Directly below the search bar */
+    left: 0; /* Align to the left of the search bar */
+    width: 100%; /* Match the width of the search bar */
+    background: grey; /* Visible background */
+    border: 1px solid black; /* Border for differentiation */
+    z-index: 1000; /* Ensure it appears above other elements */
+    max-height: 200px; /* Limit height and allow scrolling */
+    overflow-y: auto; /* Scroll if content exceeds max height */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for aesthetics */
 }
 
 #searchResults li {
     background: #f4f4f4;
     padding: 8px;
-    margin: 5px 0;
-    border: solid black 1px;
+    margin: 0; /* Remove unnecessary margin */
+    border-bottom: 1px solid #ddd; /* Add separators between items */
     color: black;
     cursor: pointer;
 }
