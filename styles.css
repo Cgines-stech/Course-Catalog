@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping for smaller screens */
     align-items: center;
-    background: #007cbc;
+    background: grey;
     padding: 10px;
     gap: 10px;
 }
@@ -25,20 +25,16 @@ body {
     font-size: 16px;
 }
 
+/* Search Results appear BELOW search box */
 #searchResults {
     list-style: none;
     padding: 10px;
     position: absolute;
     width: 250px;
     overflow-y: auto;
-    top: calc(100% + 5px); /* Place it just below the search bar */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    background: white; /* Ensure background stands out */
-    border: 1px solid black; /* Add border to differentiate */
-    max-height: 200px; /* Optional: Limit height with scrolling */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for aesthetics */
 }
 
 #searchResults li {
@@ -72,21 +68,6 @@ iframe {
     width: 90%;
     height: 100%;
     border: none;
-}
-
-#findButton {
-    padding: 8px;
-    font-size: 16px;
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 10px;
-}
-
-#findButton:hover {
-    background-color: purple;
 }
 
 .textLayer {
