@@ -13,7 +13,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    background: red;
+    background: grey;
     color: white;
     padding: 10px;
     height: 60px;
@@ -75,7 +75,7 @@ iframe {
 #findButton {
     padding: 8px;
     font-size: 16px;
-    background-color: greenyellow;
+    background-color: blue;
     color: white;
     border: none;
     cursor: pointer;
@@ -84,5 +84,19 @@ iframe {
 }
 
 #findButton:hover {
-    background-color: green;
+    background-color: purple;
+}
+
+.textLayer {
+    position: absolute;
+    pointer-events: none; /* Prevent interaction with the text layer */
+    z-index: 100;
+}
+
+.textLayer span {
+    position: absolute;
+    background: none;
+    font-family: sans-serif;
+    white-space: pre;
+    transform-origin: 0 0;
 }

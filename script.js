@@ -117,12 +117,62 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    function highlightTextInPDF(query) {
+    async function highlightTextInPDF(query) {
         if (!query || !currentPDF) return;
+    
+        const pdfUrl = currentPDF; // Current PDF file's path
+        const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+        const iframeDoc = pdfViewer.contentDocument || pdfViewer.contentWindow.document;
         
-        pdfViewer.onload = function () {
-            pdfViewer.contentWindow.postMessage({ type: "highlight", query }, "*");
-        };
+        // Clear any previous text layers in the iframe
+        const oldTextLayer = iframeDoc.querySelector(".textLayer");
+        if (oldTextLayer) oldTextLayer.remove();
+    
+        // Loop through each page to find and highlight text
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            const page = await pdf.getPage(pageNum);
+            const viewport = page.getViewport({ scale: 1 }); // Adjust scale as needed
+    
+            // Create a canvas to render the page (if not already rendered)
+            let canvas = iframeDoc.querySelector(`#canvas-${pageNum}`);
+            if (!canvas) {
+                canvas = iframeDoc.createElement("canvas");
+                canvas.id = `canvas-${pageNum}`;
+                iframeDoc.body.appendChild(canvas);
+            }
+            const context = canvas.getContext("2d");
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            page.render({ canvasContext: context, viewport });
+    
+            // Create a text layer to overlay on the canvas
+            const textContent = await page.getTextContent();
+            const textLayerDiv = iframeDoc.createElement("div");
+            textLayerDiv.className = "textLayer";
+            textLayerDiv.style.position = "absolute";
+            textLayerDiv.style.top = `${canvas.offsetTop}px`;
+            textLayerDiv.style.left = `${canvas.offsetLeft}px`;
+            iframeDoc.body.appendChild(textLayerDiv);
+    
+            // Add text spans for each piece of text content
+            textContent.items.forEach((item) => {
+                const span = iframeDoc.createElement("span");
+                span.textContent = item.str;
+                span.style.position = "absolute";
+                const transform = viewport.transform;
+                const [x, y] = [item.transform[4], item.transform[5]];
+                span.style.left = `${x * transform[0]}px`;
+                span.style.top = `${y * transform[3]}px`;
+                span.style.fontSize = `${item.height}px`;
+                span.style.color = "black";
+    
+                // Highlight matches with query
+                if (span.textContent.toLowerCase().includes(query.toLowerCase())) {
+                    span.style.backgroundColor = "yellow";
+                }
+                textLayerDiv.appendChild(span);
+            });
+        }
     }
 
     window.addEventListener("message", function (event) {
