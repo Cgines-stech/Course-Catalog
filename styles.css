@@ -17,6 +17,7 @@ body {
     background: #007cbc;
     padding: 10px;
     gap: 10px;
+    position: relative;
 }
 
 /* Dropdowns & Search */
@@ -36,9 +37,12 @@ body {
     width: calc(100% - 20px); /* Matches the search bar width, adjusting for padding */
     top: 100%; /* Positions the list directly below the search bar */
     left: 0; /* Aligns with the search bar's left edge */
-    z-index: 999; /* Ensures the results appear above everything else */
+    z-index: 9999; /* Overrides stacking issues */
     max-height: 200px; /* Adds a limit to height for better usability */
     overflow-y: auto; /* Enables scrolling if the results exceed max-height */
+    display: block; /* Ensures it is visible */
+    visibility: visible; /* Makes it display properly */
+    opacity: 1; /* Fully opaque */
 }
 
 #searchResults li {
