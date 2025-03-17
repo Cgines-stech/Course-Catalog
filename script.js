@@ -8,10 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const catalogData = {
         "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
-        "Automation Technology": ["TEAM 1010","TEAM 1020","TEAM 1030","TEAM 1040","TEAM 1050","TEAM 1060","TEAM 1070","TEAM 1080","TEAM 1510","TEAM 1640","TEAM 2005","TEAM 2250"],
+        "Automation Technology": ["TEAM 1010","TEAM 1020","TEAM 1030","TEAM 1040","TEAM 1050","TEAM 1060","TEAM 1070","TEAM 1080","TEAM 1510","TEAM 1640","TEAM 2005","TEAM 2210"],
         "Automotive Technician": ["AUTO 1020", "MAST AD01", "MAST GM01", "MAST HY01", "MAST MB01", "MAST TY01", "SWAM 1103", "SWAM 1135", "SWAM 1200", "SWAM 1310", "SWAM 1440", "SWAM 1521", "SWAM 1530", "SWAM 1610", "SWAM 2620", "SWAM 2710", "SWAM 2810", "SWAM 2930", "SWAM 3005"],
         "Commercial Driver's License Class A": ["TECD 1100"],
-        "Culinary Arts": ["TECA 1000", "TECA 1010", "TECA 1020", "TECA 1100", "TECA 1110", "TECA 1200", "TECA 1210", "TECA 1220", "TECA 1240", "TECA 1400", "TECA 1500", "TECA 1600", "TECA 1630", "TECA 1800", "TECA 1830", "TECA 1920"]
+        "Culinary Arts": ["TECA 1000", "TECA 1010", "TECA 1020", "TECA 1100", "TECA 1110", "TECA 1200", "TECA 1210", "TECA 1220", "TECA 1240", "TECA 1400", "TECA 1500", "TECA 1600", "TECA 1630", "TECA 1800", "TECA 1830", "TECA 1920"],
+        "Electrical Apprenticeship": ["TEEL 1110", "TEEL 1120", "TEEL 1210", "TEEL 1220", "TEEL 1310", "TEEL 1320", "TEEL 1410", "TEEL 1420"]
     };
 
     // Function to get query parameters from the URL
@@ -131,7 +132,16 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Culinary Arts/TECA 1630.pdf",
             "pdfs/Culinary Arts/TECA 1800.pdf",
             "pdfs/Culinary Arts/TECA 1830.pdf",
-            "pdfs/Culinary Arts/TECA 1920.pdf"
+            "pdfs/Culinary Arts/TECA 1920.pdf",
+
+            "pdfs/Electrical Apprenticeship/TEEL 1110.pdf",
+            "pdfs/Electrical Apprenticeship/TEEL 1120.pdf",
+            "pdfs/Electrical Apprenticeship/TEEL 1210.pdf",
+            "pdfs/Electrical Apprenticeship/TEEL 1220.pdf",
+            "pdfs/Electrical Apprenticeship/TEEL 1310.pdf",
+            "pdfs/Electrical Apprenticeship/TEEL 1320.pdf",
+            "pdfs/Electrical Apprenticeship/TEEL 1410.pdf",
+            "pdfs/Electrical Apprenticeship/TEEL 1420.pdf"
         ];
 
         let index = {};
