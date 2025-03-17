@@ -28,24 +28,27 @@ body {
 /* Search Results appear BELOW search box */
 #searchResults {
     list-style: none;
-    margin-top: 5px; /* Slight spacing below the search bar */
-    position: relative; /* Ensures proper placement relative to its container */
-    padding: 0;
-    background: #fff; /* Optional: make it visually distinct */
-    border: 1px solid #ddd; /* Optional: add a subtle border for definition */
-    max-height: 200px; /* Optional: limit height and enable scrolling for overflow */
-    overflow-y: auto;
+    margin: 0; /* Removes any default margin */
+    padding: 0; /* Removes default padding */
+    background: #fff; /* Ensures a visible background */
+    border: 1px solid #ccc; /* Adds a light border for distinction */
+    position: absolute; /* Allows the results to overlay on top of other elements */
+    width: calc(100% - 20px); /* Matches the search bar width, adjusting for padding */
+    top: 100%; /* Positions the list directly below the search bar */
+    left: 0; /* Aligns with the search bar's left edge */
+    z-index: 999; /* Ensures the results appear above everything else */
+    max-height: 200px; /* Adds a limit to height for better usability */
+    overflow-y: auto; /* Enables scrolling if the results exceed max-height */
 }
 
 #searchResults li {
-    padding: 8px;
-    margin: 0; /* Reset margin for tighter spacing */
-    border-bottom: 1px solid #ddd; /* Optional: visually separate items */
+    padding: 10px; /* Adds some space within each list item */
+    border-bottom: 1px solid #eee; /* Visually separates each result */
     cursor: pointer;
 }
 
 #searchResults li:hover {
-    background: #f0f0f0;
+    background: #f9f9f9; /* Adds hover feedback */
 }
 
 /* Content Layout */
@@ -97,7 +100,6 @@ iframe {
     .info-message {
         order: -1; /* Places the message above the other elements */
         width: 100%; /* Makes it span the full width */
-        background-color: #444; /* Optional: Add contrast for readability */
         border-radius: 5px;
     }
     .navbar select, .navbar input {
