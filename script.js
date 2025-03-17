@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const catalogData = {
         "Advanced Emergency Medical Technician": ["TEEM 1201", "TEEM 1900"],
-        "Automation Technology": ["TEAM 1010"],
+        "Automation Technology": ["TEAM 1010,TEAM 1020,TEAM 1030,TEAM 1040,TEAM 1050,TEAM 1060,TEAM 1070,TEAM 1080,TEAM 1510,TEAM 1640,TEAM 2005,TEAM 2250"],
         "Automotive Technician": ["SWAM 1103", "SWAM 1521"],
         "Commercial Driver's License Class A": ["TECD 1100"]
     };
@@ -79,9 +79,23 @@ document.addEventListener("DOMContentLoaded", function () {
         let pdfList = [
             "pdfs/Advanced Emergency Medical Technician/TEEM 1201.pdf",
             "pdfs/Advanced Emergency Medical Technician/TEEM 1900.pdf",
+
             "pdfs/Automation Technology/TEAM 1010.pdf",
+            "pdfs/Automation Technology/TEAM 1020.pdf",
+            "pdfs/Automation Technology/TEAM 1030.pdf",
+            "pdfs/Automation Technology/TEAM 1040.pdf",
+            "pdfs/Automation Technology/TEAM 1050.pdf",
+            "pdfs/Automation Technology/TEAM 1060.pdf",
+            "pdfs/Automation Technology/TEAM 1070.pdf",
+            "pdfs/Automation Technology/TEAM 1080.pdf",
+            "pdfs/Automation Technology/TEAM 1510.pdf",
+            "pdfs/Automation Technology/TEAM 1640.pdf",
+            "pdfs/Automation Technology/TEAM 2005.pdf",
+            "pdfs/Automation Technology/TEAM 2210.pdf",
+
             "pdfs/Automotive Technician/SWAM 1103.pdf",
             "pdfs/Automotive Technician/SWAM 1521.pdf",
+
             "pdfs/Commercial Driver's License Class A/TECD 1100.pdf"
         ];
 
