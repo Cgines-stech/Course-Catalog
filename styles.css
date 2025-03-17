@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping for smaller screens */
     align-items: center;
-    background: grey;
+    background: #007cbc;
     padding: 10px;
     gap: 10px;
 }
@@ -28,26 +28,24 @@ body {
 /* Search Results appear BELOW search box */
 #searchResults {
     list-style: none;
-    padding: 10px;
-    position: absolute;
-    width: 250px;
+    margin-top: 5px; /* Slight spacing below the search bar */
+    position: relative; /* Ensures proper placement relative to its container */
+    padding: 0;
+    background: #fff; /* Optional: make it visually distinct */
+    border: 1px solid #ddd; /* Optional: add a subtle border for definition */
+    max-height: 200px; /* Optional: limit height and enable scrolling for overflow */
     overflow-y: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
 }
 
 #searchResults li {
-    background: #f4f4f4;
     padding: 8px;
-    margin: 5px 0;
-    border: solid black 1px;
-    color: black;
+    margin: 0; /* Reset margin for tighter spacing */
+    border-bottom: 1px solid #ddd; /* Optional: visually separate items */
     cursor: pointer;
 }
 
 #searchResults li:hover {
-    background: #ddd;
+    background: #f0f0f0;
 }
 
 /* Content Layout */
