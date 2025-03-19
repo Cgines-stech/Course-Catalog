@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "Pharmacy Technician": ["TEPT 1010", "TEPT 1100", "TEPT 1110", "TEPT 1220", "TEPT 1522", "TEPT 1610", "TEPT 1900"],
         "Phlebotomy": ["PHLB 1010", "PHLB 1011X"],
         "Plumbing Apprenticeship": ["TEPL 1110", "TEPL 1120", "TEPL 1210", "TEPL 1220", "TEPL 1310", "TEPL 1320", "TEPL 1410", "TEPL 1420"],
-        "Practical Nursing": ["PN 1011", "PN 1021", "PN 1031", "PN 1038", "PN 1040X", "PN 1051", "PN 1063", "PN 1073", "PN 1084", "PN 1086X", "PN 1090"]
+        "Practical Nursing": ["PN 1011", "PN 1021", "PN 1031", "PN 1038", "PN 1040X", "PN 1051", "PN 1063", "PN 1073", "PN 1084", "PN 1086X", "PN 1090"],
+        "Production Welder": ["WELD 1010", "WELD 1112", "WELD 1146", "WELD 1281", "WELD 1301", "WELD 1311", "WELD 1316", "WELD 1390", "WELD 1503", "WELD 1511", "WELD 1601", "WELD 1611", "WELD 1621", "WELD 2450", "WELD 2455", "WELD 2915"],
+        "Welding Essentials": ["WELD 1010", "WELD 1112", "WELD 1146", "WELD 1281", "WELD 1301", "WELD 1311", "WELD 1390", "WELD 1503", "WELD 1601", "WELD 2450", "WELD 2915"]
     };
 
     // Function to get query parameters from the URL
@@ -236,7 +238,36 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Practical Nursing/PN 1073.pdf",
             "pdfs/Practical Nursing/PN 1084.pdf",
             "pdfs/Practical Nursing/PN 1086X.pdf",
-            "pdfs/Practical Nursing/PN 1090.pdf"
+            "pdfs/Practical Nursing/PN 1090.pdf",
+
+            "pdfs/Prduction Welder/PWELD 1010.pdf",
+            "pdfs/Prduction Welder/PWELD 1112.pdf",
+            "pdfs/Prduction Welder/PWELD 1146.pdf",
+            "pdfs/Prduction Welder/PWELD 1281.pdf",
+            "pdfs/Prduction Welder/PWELD 1301.pdf",
+            "pdfs/Prduction Welder/PWELD 1311.pdf",
+            "pdfs/Prduction Welder/PWELD 1316.pdf",
+            "pdfs/Prduction Welder/PWELD 1390.pdf",
+            "pdfs/Prduction Welder/PWELD 1503.pdf",
+            "pdfs/Prduction Welder/PWELD 1511.pdf",
+            "pdfs/Prduction Welder/PWELD 1601.pdf",
+            "pdfs/Prduction Welder/PWELD 1611.pdf",
+            "pdfs/Prduction Welder/PWELD 1621.pdf",
+            "pdfs/Prduction Welder/PWELD 2450.pdf",
+            "pdfs/Prduction Welder/PWELD 2455.pdf",
+            "pdfs/Prduction Welder/PWELD 2915.pdf",
+
+            "pdfs/Welding Essentials/PWELD 1010.pdf",
+            "pdfs/Welding Essentials/PWELD 1112.pdf",
+            "pdfs/Welding Essentials/PWELD 1146.pdf",
+            "pdfs/Welding Essentials/PWELD 1281.pdf",
+            "pdfs/Welding Essentials/PWELD 1301.pdf",
+            "pdfs/Welding Essentials/PWELD 1311.pdf",
+            "pdfs/Welding Essentials/PWELD 1390.pdf",
+            "pdfs/Welding Essentials/PWELD 1503.pdf",
+            "pdfs/Welding Essentials/PWELD 1601.pdf",
+            "pdfs/Welding Essentials/PWELD 2450.pdf",
+            "pdfs/Welding Essentials/PWELD 2915.pdf"
         ];
 
         let index = {};
