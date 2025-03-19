@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Information Technology": ["TEIT 1050", "TEIT 1100", "TEIT 1200", "TEIT 1210", "TEIT 1300", "TEIT 1800", "TEIT 1810", "TEIT 2100", "TEIT 2200", "TEIT 2920"],
         "Medical Assistant": ["TEMA 1010", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1060", "TEMA 1065", "TEMA 1080", "TEMA 1230", "TEMA 1241", "TEMA 1250", "TEMA 1900", "TEMA 1910"],
         "Medical Office Receptionist": ["TEMA 1000", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1080"],
-        "Nursing Assistant": ["TENA 1100", "TENA 1900"]
+        "Nursing Assistant": ["TENA 1100", "TENA 1900"],
+        "Paramedic": ["EMSP 1110", "EMSP 1111", "EMSP 1112", "EMSP 1121", "EMSP 1130", "EMSP 1501", "EMSP 1511", "EMSP 1521", "EMSP 1531", "EMSP 2120", "EMSP 2130"]
     };
 
     // Function to get query parameters from the URL
@@ -187,7 +188,19 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Medical Office Receptionist/TEMA 1080.pdf",
 
             "pdfs/Nursing Assistant/TENA 1100.pdf",
-            "pdfs/Nursing Assistant/TENA 1900.pdf"
+            "pdfs/Nursing Assistant/TENA 1900.pdf",
+
+            "pdfs/Paramedic/EMSP 1110.pdf",
+            "pdfs/Paramedic/EMSP 1111.pdf",
+            "pdfs/Paramedic/EMSP 1112.pdf",
+            "pdfs/Paramedic/EMSP 1121.pdf",
+            "pdfs/Paramedic/EMSP 1130.pdf",
+            "pdfs/Paramedic/EMSP 1501.pdf",
+            "pdfs/Paramedic/EMSP 1511.pdf",
+            "pdfs/Paramedic/EMSP 1521.pdf",
+            "pdfs/Paramedic/EMSP 1531.pdf",
+            "pdfs/Paramedic/EMSP 2120.pdf",
+            "pdfs/Paramedic/EMSP 2130.pdf"
         ];
 
         let index = {};
