@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Medical Office Receptionist": ["TEMA 1000", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1080"],
         "Nursing Assistant": ["TENA 1100", "TENA 1900"],
         "Paramedic": ["EMSP 1110", "EMSP 1111", "EMSP 1112", "EMSP 1121", "EMSP 1130", "EMSP 1501", "EMSP 1511", "EMSP 1521", "EMSP 1531", "EMSP 2120", "EMSP 2130"],
-        "Pharmacy Technician": ["TEPT 1010", "TEPT 1100", "TEPT 1110", "TEPT 1220", "TEPT 1522", "TEPT 1610", "TEPT 1900"]
+        "Pharmacy Technician": ["TEPT 1010", "TEPT 1100", "TEPT 1110", "TEPT 1220", "TEPT 1522", "TEPT 1610", "TEPT 1900"],
+        "Phlebotomy": ["PHLB 1010", "PHLB1011X"]
     };
 
     // Function to get query parameters from the URL
@@ -209,7 +210,10 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Pharmacy Technician/TEPT 1220.pdf",
             "pdfs/Pharmacy Technician/TEPT 1522.pdf",
             "pdfs/Pharmacy Technician/TEPT 1610.pdf",
-            "pdfs/Pharmacy Technician/TEPT 1900.pdf"
+            "pdfs/Pharmacy Technician/TEPT 1900.pdf",
+
+            "pdfs/Phlebotomy/PHLB 1010.pdf",
+            "pdfs/Phlebotomy/PHLB 1011X.pdf"
         ];
 
         let index = {};
