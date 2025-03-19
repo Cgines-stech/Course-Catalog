@@ -144,7 +144,24 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Electrical Apprenticeship/TEEL 1310.pdf",
             "pdfs/Electrical Apprenticeship/TEEL 1320.pdf",
             "pdfs/Electrical Apprenticeship/TEEL 1410.pdf",
-            "pdfs/Electrical Apprenticeship/TEEL 1420.pdf"
+            "pdfs/Electrical Apprenticeship/TEEL 1420.pdf",
+
+            "pdfs/Emergency Medical Technician/TEEM 1011.pdf",
+            "pdfs/Emergency Medical Technician/TEEM 1901.pdf",
+
+            "pdfs/Firefighter/TEFF 1100.pdf",
+            "pdfs/Firefighter/TEFF 1200.pdf",
+
+            "pdfs/Information Technology/TEIT 1050.pdf",
+            "pdfs/Information Technology/TEIT 1100.pdf",
+            "pdfs/Information Technology/TEIT 1200.pdf",
+            "pdfs/Information Technology/TEIT 1210.pdf",
+            "pdfs/Information Technology/TEIT 1300.pdf",
+            "pdfs/Information Technology/TEIT 1800.pdf",
+            "pdfs/Information Technology/TEIT 1810.pdf",
+            "pdfs/Information Technology/TEIT 2100.pdf",
+            "pdfs/Information Technology/TEIT 2200.pdf",
+            "pdfs/Information Technology/TEIT 2920.pdf"
         ];
 
         let index = {};
