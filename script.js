@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Paramedic": ["EMSP 1110", "EMSP 1111", "EMSP 1112", "EMSP 1121", "EMSP 1130", "EMSP 1501", "EMSP 1511", "EMSP 1521", "EMSP 1531", "EMSP 2120", "EMSP 2130"],
         "Pharmacy Technician": ["TEPT 1010", "TEPT 1100", "TEPT 1110", "TEPT 1220", "TEPT 1522", "TEPT 1610", "TEPT 1900"],
         "Phlebotomy": ["PHLB 1010", "PHLB 1011X"],
-        "Plumbing Apprenticeship": ["TEPL 1110", "TEPL 1120", "TEPL 1210", "TEPL 1220", "TEPL 1310", "TEPL 1320", "TEPL 1410", "TEPL 1420"]
+        "Plumbing Apprenticeship": ["TEPL 1110", "TEPL 1120", "TEPL 1210", "TEPL 1220", "TEPL 1310", "TEPL 1320", "TEPL 1410", "TEPL 1420"],
+        "Practical Nursing": ["PN 1011", "PN 1021", "PN 1031", "PN 1038", "PN 1040X", "PN 1051", "PN 1063", "PN 1073", "PN 1084", "PN 1086X", "PN 1090"]
     };
 
     // Function to get query parameters from the URL
@@ -223,7 +224,19 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Plumbing Apprenticeship/TEPL 1310.pdf",
             "pdfs/Plumbing Apprenticeship/TEPL 1320.pdf",
             "pdfs/Plumbing Apprenticeship/TEPL 1410.pdf",
-            "pdfs/Plumbing Apprenticeship/TEPL 1420.pdf"
+            "pdfs/Plumbing Apprenticeship/TEPL 1420.pdf",
+
+            "pdfs/Practical Nursing/PN 1011.pdf",
+            "pdfs/Practical Nursing/PN 1021.pdf",
+            "pdfs/Practical Nursing/PN 1031.pdf",
+            "pdfs/Practical Nursing/PN 1038.pdf",
+            "pdfs/Practical Nursing/PN 1040X.pdf",
+            "pdfs/Practical Nursing/PN 1051.pdf",
+            "pdfs/Practical Nursing/PN 1063.pdf",
+            "pdfs/Practical Nursing/PN 1073.pdf",
+            "pdfs/Practical Nursing/PN 1084.pdf",
+            "pdfs/Practical Nursing/PN 1086X.pdf",
+            "pdfs/Practical Nursing/PN 1090.pdf"
         ];
 
         let index = {};
