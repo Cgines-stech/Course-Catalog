@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Emergency Medical Technician": ["TEEM 1011", "TEEM 1901"],
         "Firefighter": ["TEFF 1100", "TEFF 1200"],
         "Information Technology": ["TEIT 1050", "TEIT 1100", "TEIT 1200", "TEIT 1210", "TEIT 1300", "TEIT 1800", "TEIT 1810", "TEIT 2100", "TEIT 2200", "TEIT 2920"],
-        "Medical Assistant": ["TEMA 1010", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1060", "TEMA 1065", "TEMA 1080", "TEMA 1230", "TEMA 1241", "TEMA 1250", "TEMA 1900", "TEMA 1910"]
+        "Medical Assistant": ["TEMA 1010", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1060", "TEMA 1065", "TEMA 1080", "TEMA 1230", "TEMA 1241", "TEMA 1250", "TEMA 1900", "TEMA 1910"],
+        "Medical Office Receptionist": ["TEMA 1000", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1080"]
     };
 
     // Function to get query parameters from the URL
@@ -176,7 +177,13 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Medical Assistant/TEMA 1241.pdf",
             "pdfs/Medical Assistant/TEMA 1250.pdf",
             "pdfs/Medical Assistant/TEMA 1900.pdf",
-            "pdfs/Medical Assistant/TEMA 1910.pdf"
+            "pdfs/Medical Assistant/TEMA 1910.pdf",
+
+            "pdfs/Medical Office Receptionist/TEMA 1000.pdf",
+            "pdfs/Medical Office Receptionist/TEMA 1020.pdf",
+            "pdfs/Medical Office Receptionist/TEMA 1030.pdf",
+            "pdfs/Medical Office Receptionist/TEMA 1040.pdf",
+            "pdfs/Medical Office Receptionist/TEMA 1080.pdf"
         ];
 
         let index = {};
