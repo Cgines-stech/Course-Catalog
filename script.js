@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Practical Nursing": ["PN 1011", "PN 1021", "PN 1031", "PN 1038", "PN 1040X", "PN 1051", "PN 1063", "PN 1073", "PN 1084", "PN 1086X", "PN 1090"],
         "Production Welder": ["WELD 1010", "WELD 1112", "WELD 1146", "WELD 1281", "WELD 1301", "WELD 1311", "WELD 1316", "WELD 1390", "WELD 1503", "WELD 1511", "WELD 1601", "WELD 1611", "WELD 1621", "WELD 2450", "WELD 2455", "WELD 2915"],
         "Software Development": ["TESD 1050", "TESD 1100", "TESD 1180", "TESD 1400", "TESD 1420", "TESD 1430", "TESD 1500", "TESD 1600", "TESD 1610", "TESD 1620", "TESD 1700", "TESD 1800", "TESD 2860"],
+        "Surgical Technology": ["TESU 1010", "TESU 1020", "TESU 1030", "TESU 1040", "TESU 1050", "TESU 1060", "TESU 1070", "TESU 1221", "TESU 2900", "TESU 2910"],
         "Welding Essentials": ["WELD 1010", "WELD 1112", "WELD 1146", "WELD 1281", "WELD 1301", "WELD 1311", "WELD 1390", "WELD 1503", "WELD 1601", "WELD 2450", "WELD 2915"]
     };
 
@@ -271,6 +272,17 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Software Development/TESD 1700.pdf",
             "pdfs/Software Development/TESD 1800.pdf",
             "pdfs/Software Development/TESD 2860.pdf",
+
+            "pdfs/Surgical Technology/TESU 1010.pdf",
+            "pdfs/Surgical Technology/TESU 1020.pdf",
+            "pdfs/Surgical Technology/TESU 1030.pdf",
+            "pdfs/Surgical Technology/TESU 1040.pdf",
+            "pdfs/Surgical Technology/TESU 1050.pdf",
+            "pdfs/Surgical Technology/TESU 1060.pdf",
+            "pdfs/Surgical Technology/TESU 1070.pdf",
+            "pdfs/Surgical Technology/TESU 1221.pdf",
+            "pdfs/Surgical Technology/TESU 2900.pdf",
+            "pdfs/Surgical Technology/TESU 2910.pdf",
 
             "pdfs/Welding Essentials/WELD 1010.pdf",
             "pdfs/Welding Essentials/WELD 1112.pdf",
