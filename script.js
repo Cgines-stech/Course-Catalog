@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const catalogData = {
         "Advanced Emergency Medical Technician": ["TEEM 1202", "TEEM 1904"],
         "Automation Technology": ["TEAM 1010","TEAM 1020","TEAM 1030","TEAM 1040","TEAM 1050","TEAM 1060","TEAM 1070","TEAM 1080","TEAM 1510","TEAM 1640","TEAM 2005","TEAM 2210"],
-        "Automotive Technnology": ["TEAU 1050", "TEAU 1055", "TEAU 1140", "TEAU 1240", "TEAU 1340", "TEAU 1400", "TEAU 1500", "TEAU 1600", "TEAU 1740", "TEAU 1800", "TEAU 2640", "TEAU 2840", "TEAU 2910", "TEAU 2911", "TEAU 2912", "TEAU 2913", "TEAU 2914", "TEAU 2915"],
+        "Automotive Technology": ["TEAU 1050", "TEAU 1055", "TEAU 1140", "TEAU 1240", "TEAU 1340", "TEAU 1400", "TEAU 1500", "TEAU 1600", "TEAU 1740", "TEAU 1800", "TEAU 2640", "TEAU 2840", "TEAU 2910", "TEAU 2911", "TEAU 2912", "TEAU 2913", "TEAU 2914", "TEAU 2915"],
         "Commercial Driver's License Class A": ["TECD 1100"],
         "Culinary Arts": ["TECA 1000", "TECA 1010", "TECA 1020", "TECA 1100", "TECA 1110", "TECA 1200", "TECA 1210", "TECA 1220", "TECA 1240", "TECA 1400", "TECA 1500", "TECA 1600", "TECA 1630", "TECA 1800", "TECA 1830", "TECA 1920"],
         "Electrical Apprenticeship": ["TEEL 1110", "TEEL 1120", "TEEL 1210", "TEEL 1220", "TEEL 1310", "TEEL 1320", "TEEL 1410", "TEEL 1420"],
