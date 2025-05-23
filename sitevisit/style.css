@@ -1,0 +1,136 @@
+/* style.css */
+body {
+  display: flex;
+  margin: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.nav {
+  width: 20%;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #e8f4fa; /* light blue tint */
+  border-right: 1px solid #b3dff1;
+}
+
+.checklist {
+  width: 15%;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #e8f4fa; /* light blue tint */
+  border-right: 1px solid #b3dff1;
+}
+
+.checklist {
+  border-left: 1px solid #b3dff1;
+}
+
+.viewer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+iframe {
+  border: none;
+  flex: 1;
+  height: 100%;
+}
+
+.viewer > div {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  gap: 10px;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ccc;
+}
+
+button {
+  background-color: #24a0d6;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1d8abe;
+}
+
+label {
+  display: block;
+  margin: 6px 0;
+}
+
+.upload-label {
+  background-color: #24a0d6;
+  color: white;
+  padding: 8px 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.upload-label:hover {
+  background-color: #1d8abe;
+}
+
+textarea {
+  width: 95%;
+  height: 150px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.folder-label {
+  cursor: pointer;
+  font-weight: bold;
+  color: #24a0d6;
+  margin-top: 10px;
+}
+
+.file-entry {
+  cursor: pointer;
+  margin: 4px 0 4px 10px;
+}
+
+h3 {
+  color: #24a0d6;
+  margin-bottom: 12px;
+}
+
+.nav ul ul {
+  padding-left: 16px;
+}
+
+.publish-toast {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #24a0d6;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-weight: bold;
+}
