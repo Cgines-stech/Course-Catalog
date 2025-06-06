@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Practical Nursing": ["PN 1011", "PN 1021", "PN 1031", "PN 1038", "PN 1040X", "PN 1051", "PN 1063", "PN 1073", "PN 1084", "PN 1086X", "PN 1090"],
         "Software Development": ["TESD 1050", "TESD 1100", "TESD 1180", "TESD 1400", "TESD 1420", "TESD 1430", "TESD 1500", "TESD 1600", "TESD 1610", "TESD 1620", "TESD 1700", "TESD 1800", "TESD 2860"],
         "Surgical Technology": ["TESU 1010", "TESU 1020", "TESU 1030", "TESU 1040", "TESU 1050", "TESU 1060", "TESU 1070", "TESU 1221", "TESU 2900", "TESU 2910"],
-        "Welding Technology": ["TEWT 1000","TEWT 1004","TEWT 1010","TEWT 1045","TEWT 1111","TEWT 1112","TEWT 1133","TEWT 1211","TEWT 1212","TEWT 1311","TEWT 1312","TEWT 1411","TEWT 1450","TEWT 1620"]
+        "Welding Technology": ["TEWT 1000","TEWT 1004","TEWT 1010","TEWT 1045","TEWT 1111","TEWT 1112","TEWT 1135","TEWT 1211","TEWT 1212","TEWT 1311","TEWT 1312","TEWT 1411","TEWT 1450","TEWT 1620"]
     };
 
     // Function to get query parameters from the URL
@@ -284,10 +284,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "pdfs/Welding Technology/TEWT 1045.pdf",
             "pdfs/Welding Technology/TEWT 1111.pdf",
             "pdfs/Welding Technology/TEWT 1112.pdf",
-            "pdfs/Welding Technology/TEWT 1133.pdf",
+            "pdfs/Welding Technology/TEWT 1135.pdf",
             "pdfs/Welding Technology/TEWT 1211.pdf",
             "pdfs/Welding Technology/TEWT 1212.pdf",
             "pdfs/Welding Technology/TEWT 1311.pdf",
+            "pdfs/Welding Technology/TEWT 1312.pdf",
             "pdfs/Welding Technology/TEWT 1411.pdf",
             "pdfs/Welding Technology/TEWT 1450.pdf",
             "pdfs/Welding Technology/TEWT 1620.pdf"
