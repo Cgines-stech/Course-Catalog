@@ -66,7 +66,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0; /* Only top and bottom padding */
 }
 
 iframe {
