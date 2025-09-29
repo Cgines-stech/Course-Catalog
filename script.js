@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Firefighter": ["TEFF 1100", "TEFF 1200"],
         "Information Technology": ["TEIT 1050", "TEIT 1100", "TEIT 1170", "TEIT 1200", "TEIT 1210", "TEIT 1300", "TEIT 1800", "TEIT 1810", "TEIT 2171", "TEIT 2200", "TEIT 2920"],
         "Master Esthetician": ["TEES 1010", "TEES 1020", "TEES 1030", "TEES 2010", "TEES 2020", "TEES 2030", "TEES 2991", "TEES 2992", "TEES 2993", "TEES 2994", "TEES 2995"],
-        "Medical Assistant": ["TEMA 1010", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1060", "TEMA 1065", "TEMA 1080", "TEMA 1230", "TEMA 1241", "TEMA 1250", "TEMA 1900", "TEMA 1910"],
+        "Medical Assistant": ["TEMA 1010", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1050", "TEMA 1060", "TEMA 1065", "TEMA 1080", "TEMA 1230", "TEMA 1241", "TEMA 1250", "TEMA 1900", "TEMA 1910"],
         "Medical Office Receptionist": ["TEMA 1000", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1080"],
         "Nursing Assistant": ["TENA 1110", "TENA 1900"],
         "Paramedic": ["EMSP 1110", "EMSP 1111", "EMSP 1112", "EMSP 1121", "EMSP 1130", "EMSP 1501", "EMSP 1511", "EMSP 1521", "EMSP 1531", "EMSP 2120", "EMSP 2130"],
