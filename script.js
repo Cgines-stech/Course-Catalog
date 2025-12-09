@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Medical Assistant": ["TEMA 1010", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1050", "TEMA 1060", "TEMA 1065", "TEMA 1080", "TEMA 1230", "TEMA 1241", "TEMA 1250", "TEMA 1900", "TEMA 1910"],
         "Medical Office Receptionist": ["TEMA 1000", "TEMA 1020", "TEMA 1030", "TEMA 1040", "TEMA 1080"],
         "Nursing Assistant": ["TENA 1110", "TENA 1900"],
-        "Paramedic": ["EMSP 1110", "EMSP 1111", "EMSP 1112", "EMSP 1121", "EMSP 1130", "EMSP 1501", "EMSP 1511", "EMSP 1521", "EMSP 1531", "EMSP 2120", "EMSP 2130"],
+        "Paramedic": ["TEPA 1000", "TEPA 1110", "TEPA 1111", "TEPA 1501", "TEPA 1511", "TEPA 2121", "TEPA 2993", "TEPA 2994", "TEPA 2999"],
         "Pharmacy Technician": ["TEPT 1010", "TEPT 1100", "TEPT 1110", "TEPT 1220", "TEPT 1522", "TEPT 1610", "TEPT 1900"],
         "Phlebotomy": ["TEPH 1010", "TEPH 1020"],
         "Plumbing Apprenticeship": ["TEPL 1110", "TEPL 1120", "TEPL 1210", "TEPL 1220", "TEPL 1310", "TEPL 1320", "TEPL 1410", "TEPL 1420"],
